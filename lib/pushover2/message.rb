@@ -29,8 +29,8 @@ module Pushover2
     # @param timestamp [] Optional.
     # @param title [] Optional.
     # @param ttl [] Optional.
-    # @param url
-    # @param url_title
+    # @param url [] Optional.
+    # @param url_title [] Optional.
     def initialize(token:, user:, message:,
       attachment: nil,
       attachment_base64: nil,
