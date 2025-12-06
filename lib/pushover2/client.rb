@@ -8,6 +8,7 @@ module Pushover2
   class Client
     BASE_URI = "https://api.pushover.net"
 
+    # @param path [String]
     def post(path, query: {}, body: {})
       make_request(path, body: body)
     end

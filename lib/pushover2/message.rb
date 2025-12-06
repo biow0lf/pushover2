@@ -14,11 +14,30 @@ module Pushover2
     # @param token [String] Application Token (how is sending message). Required.
     # @param user [String] User Token (how is receiving message). Required.
     # @param message [String] Message to send. Required.
-    def initialize(token:, user:, message:)
+    # @param attachment [] Optional.
+    # @param attachment_base64 [] Optional.
+    # @param attachment_type [] Optional.
+    # @param device [] Optional.
+    # @param html [] Optional.
+    # @param priority [] Optional.
+    def initialize(token:, user:, message:,
+      attachment: nil,
+      attachment_base64: nil,
+      attachment_type: nil,
+      device: nil,
+      html: nil,
+      priority: nil
+    )
       @client = Client.new
       @token = token
       @user = user
       @message = message
+      @attachment = attachment
+      @attachment_base64 = attachment_base64
+      @attachment_type = attachment_type
+      @device = device
+      @html = html
+      @priority = priority
     end
 
     def push
