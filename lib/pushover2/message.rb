@@ -4,12 +4,17 @@ module Pushover2
   class Message
     MESSAGE_PATH = "/1/messages.json"
 
-    # Where:
-    #   client is Pushover2::Client instance
-    #   token is APP Token
-    #   user is User Token
-    #   message is string to send
-    attr_reader :client, :token, :user, :message
+    # Instance of Pushover2::Client
+    attr_reader :client
+
+    # Application Token (how is sending message)
+    attr_reader :token
+
+    # User Token (how is receiving message)
+    attr_reader :user
+
+    # Message to send
+    attr_reader :message
 
     # @param token [String] Application Token (how is sending message). Required.
     # @param user [String] User Token (how is receiving message). Required.
