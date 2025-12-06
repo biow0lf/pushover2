@@ -12,3 +12,6 @@
 
 # RubyMine
 .idea/**/*
+
+# tokens in .envrc
+.envrc

@@ -10,9 +10,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.3)
+    benchmark (0.5.0)
     date (3.5.0)
     diff-lcs (1.6.2)
     erb (6.0.0)
+    httplog (1.7.3)
+      rack (>= 2.0)
+      rainbow (>= 2.0.0)
     io-console (0.8.1)
     irb (1.15.3)
       pp (>= 0.6.0)
@@ -21,6 +25,7 @@ GEM
     json (2.17.1)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
+    logger (1.7.0)
     net-http (0.8.0)
       uri (>= 0.11.1)
     parallel (1.27.0)
@@ -35,6 +40,7 @@ GEM
       date
       stringio
     racc (1.8.1)
+    rack (3.2.4)
     rainbow (3.1.1)
     rake (13.3.1)
     rdoc (6.16.1)
@@ -100,7 +106,10 @@ PLATFORMS
   x86_64-darwin-24
 
 DEPENDENCIES
+  benchmark
+  httplog
   irb
+  logger
   pushover2!
   rake (~> 13.0)
   rspec (~> 3.0)
@@ -108,14 +117,17 @@ DEPENDENCIES
 
 CHECKSUMS
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
+  benchmark (0.5.0) sha256=465df122341aedcb81a2a24b4d3bd19b6c67c1530713fd533f3ff034e419236c
   date (3.5.0) sha256=5e74fd6c04b0e65d97ad4f3bb5cb2d8efb37f386cc848f46310b4593ffc46ee5
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   erb (6.0.0) sha256=2730893f9d8c9733f16cab315a4e4b71c1afa9cabc1a1e7ad1403feba8f52579
+  httplog (1.7.3) sha256=eb0da701d40ce45c18676f6266e01ef4693d66350c59607fc86ef90f5b2ca711
   io-console (0.8.1) sha256=1e15440a6b2f67b6ea496df7c474ed62c860ad11237f29b3bd187f054b925fcb
   irb (1.15.3) sha256=4349edff1efa7ff7bfd34cb9df74a133a588ba88c2718098b3b4468b81184aaa
   json (2.17.1) sha256=e0e4824541336a44915436f53e7ea74c687314fb8f88080fa1456f6a34ead92e
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
+  logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   net-http (0.8.0) sha256=df42c47ce9f9e95ad32a317c97c12f945bc1af365288837ea4ff259876ecb46d
   parallel (1.27.0) sha256=4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130
   parser (3.3.10.0) sha256=ce3587fa5cc55a88c4ba5b2b37621b3329aadf5728f9eafa36bbd121462aabd6
@@ -125,6 +137,7 @@ CHECKSUMS
   psych (5.2.6) sha256=814328aa5dcb6d604d32126a20bc1cbcf05521a5b49dbb1a8b30a07e580f316e
   pushover2 (0.1.0)
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
+  rack (3.2.4) sha256=5d74b6f75082a643f43c1e76b419c40f0e5527fcfee1e669ac1e6b73c0ccb6f6
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rake (13.3.1) sha256=8c9e89d09f66a26a01264e7e3480ec0607f0c497a861ef16063604b1b08eb19c
   rdoc (6.16.1) sha256=71357cc208e6da77ba0c4494e01ae870dd18b437c7c7d801dd73ee2f340b9f5c
