@@ -20,13 +20,21 @@ module Pushover2
     # @param device [] Optional.
     # @param html [] Optional.
     # @param priority [] Optional.
+    # @param sound [] Optional.
+    # @param timestamp [] Optional.
+    # @param title [] Optional.
+    # @param ttl [] Optional.
     def initialize(token:, user:, message:,
       attachment: nil,
       attachment_base64: nil,
       attachment_type: nil,
       device: nil,
       html: nil,
-      priority: nil
+      priority: nil,
+      sound: nil,
+      timestamp: nil,
+      title: nil,
+      ttl: nil
     )
       @client = Client.new
       @token = token
@@ -38,6 +46,10 @@ module Pushover2
       @device = device
       @html = html
       @priority = priority
+      @sound = sound
+      @timestamp = timestamp
+      @title = title
+      @ttl = ttl
     end
 
     def push
