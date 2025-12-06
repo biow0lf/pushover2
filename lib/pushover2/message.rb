@@ -13,12 +13,25 @@ module Pushover2
     # User Token (how is receiving message)
     attr_reader :user
 
-    # Message to send
+    # String to send
     attr_reader :message
+
+    attr_reader :attachment
+    attr_reader :attachment_base64
+    attr_reader :attachment_type
+    attr_reader :device
+    attr_reader :html
+    attr_reader :priority
+    attr_reader :sound
+    attr_reader :timestamp
+    attr_reader :title
+    attr_reader :ttl
+    attr_reader :url
+    attr_reader :url_title
 
     # @param token [String] Application Token (how is sending message). Required.
     # @param user [String] User Token (how is receiving message). Required.
-    # @param message [String] Message to send. Required.
+    # @param message [String] String to send. Required.
     # @param attachment [] Optional.
     # @param attachment_base64 [] Optional.
     # @param attachment_type [] Optional.
@@ -64,17 +77,43 @@ module Pushover2
     end
 
     def push
-      if token.nil? || user.nil? || message.nil?
-        raise "Missing required fields"
-      end
+      client.post(MESSAGE_PATH, body: payload)
+    end
 
+    private
+
+    def payload
       body = {
         token: token,
         user: user,
-        message: message
-      }
+        message: message,
+        attachment: attachment,
+        attachment_base64: attachment_base64,
+        attachment_type: attachment_type,
+        device: device,
+        html: html,
+        priority: priority,
+        sound: sound,
+        timestamp: timestamp,
+        title: title,
+        ttl: ttl,
+        url: url,
+        url_title: url_title
+      }.compact
 
-      client.post(MESSAGE_PATH, body: body)
+      if body[:token].nil?
+        raise "Missing required :token field"
+      end
+
+      if body[:user].nil?
+        raise "Missing required :user field"
+      end
+
+      if body[:message].nil?
+        raise "Missing required :message field"
+      end
+
+      body
     end
   end
 end
