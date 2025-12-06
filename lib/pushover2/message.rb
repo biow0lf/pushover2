@@ -24,6 +24,8 @@ module Pushover2
     # @param timestamp [] Optional.
     # @param title [] Optional.
     # @param ttl [] Optional.
+    # @param url
+    # @param url_title
     def initialize(token:, user:, message:,
       attachment: nil,
       attachment_base64: nil,
@@ -34,7 +36,9 @@ module Pushover2
       sound: nil,
       timestamp: nil,
       title: nil,
-      ttl: nil
+      ttl: nil,
+      url: nil,
+      url_title: nil
     )
       @client = Client.new
       @token = token
@@ -50,6 +54,8 @@ module Pushover2
       @timestamp = timestamp
       @title = title
       @ttl = ttl
+      @url = url
+      @url_title = url_title
     end
 
     def push
