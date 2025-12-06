@@ -35,15 +35,15 @@ module Pushover2
     # @param attachment [] Optional.
     # @param attachment_base64 [] Optional.
     # @param attachment_type [] Optional.
-    # @param device [] Optional.
+    # @param device [String] Device name to send notification. Optional.
     # @param html [] Optional.
     # @param priority [] Optional.
     # @param sound [] Optional.
     # @param timestamp [] Optional.
-    # @param title [] Optional.
-    # @param ttl [] Optional.
-    # @param url [] Optional.
-    # @param url_title [] Optional.
+    # @param title [String] Title for notification. Optional.
+    # @param ttl [Integer] TTL for notification in seconds. Optional.
+    # @param url [String] URL for notification. Optional.
+    # @param url_title [String] Title for notification URL. Optional.
     def initialize(token:, user:, message:,
       attachment: nil,
       attachment_base64: nil,
