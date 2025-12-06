@@ -64,7 +64,17 @@ module Pushover2
     end
 
     def push
-      client.post(MESSAGE_PATH, body: {token: token, user: user, message: message})
+      if token.nil? || user.nil? || message.nil?
+        raise "Missing required fields"
+      end
+
+      body = {
+        token: token,
+        user: user,
+        message: message
+      }
+
+      client.post(MESSAGE_PATH, body: body)
     end
   end
 end
