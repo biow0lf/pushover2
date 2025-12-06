@@ -77,13 +77,13 @@ module Pushover2
     end
 
     def push
-      client.post(MESSAGE_PATH, body: payload)
+      client.post(MESSAGE_PATH, body: body)
     end
 
     private
 
-    def payload
-      body = {
+    def body
+      payload = {
         token: token,
         user: user,
         message: message,
@@ -101,19 +101,19 @@ module Pushover2
         url_title: url_title
       }.compact
 
-      if body[:token].nil?
+      if payload[:token].nil?
         raise "Missing required :token field"
       end
 
-      if body[:user].nil?
+      if payload[:user].nil?
         raise "Missing required :user field"
       end
 
-      if body[:message].nil?
+      if payload[:message].nil?
         raise "Missing required :message field"
       end
 
-      body
+      payload
     end
   end
 end
