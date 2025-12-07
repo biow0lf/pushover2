@@ -1,0 +1,11 @@
+AllCops:
+  NewCops: enable
+
+Style/StringLiterals:
+  Enabled: false
+
+Gemspec/OrderedDependencies:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
