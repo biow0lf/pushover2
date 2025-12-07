@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pushover.net/1/messages.json
+    body:
+      encoding: US-ASCII
+      string: token=app-token-123&user=user-token-123&message=%3Cb%3EHello%3C%2Fb%3E%2C+%3Ci%3EWorld%21%3C%2Fi%3E.+%3Cu%3EUnderlined+words%3C%2Fu%3E.+%3Cfont+color%3D%22%230000ff%22%3Eword%3C%2Ffont%3E.+%3Ca+href%3D%22https%3A%2F%2Fevemonk.com%2F%22%3EEveMonk+link.%3C%2Fa%3E&html=1
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Dec 2025 14:19:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      X-Frame-Options:
+      - DENY
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-Requested-With, X-Prototype-Version, Origin, Accept, Content-Type, X-CSRF-Token,
+        X-Pushover-App, Authorization
+      Access-Control-Max-Age:
+      - '1728000'
+      X-Limit-App-Limit:
+      - '10000'
+      X-Limit-App-Remaining:
+      - '9992'
+      X-Limit-App-Reset:
+      - '1767247200'
+      Etag:
+      - W/"6762021abf51385b2f007b935572ed84"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a7d3ca45-0814-42cd-ba39-2e22d8ecc94f
+      X-Runtime:
+      - '0.069397'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Po-H:
+      - f
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 9aa4a7da0dc03013-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":1,"request":"a7d3ca45-0814-42cd-ba39-2e22d8ecc94f"}'
+  recorded_at: Sun, 07 Dec 2025 14:19:01 GMT
+recorded_with: VCR 6.3.1

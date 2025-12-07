@@ -22,4 +22,17 @@ RSpec.describe Pushover2 do
       expect { m.push }.not_to raise_error
     end
   end
+
+  it "is expected to send html message" do
+    message = "<b>Hello</b>, <i>World!</i>. " \
+      "<u>Underlined words</u>. " \
+      "<font color=\"#0000ff\">word</font>. " \
+      "<a href=\"https://evemonk.com/\">EveMonk link.</a>"
+
+    m = Pushover2::Message.new(token: token, user: user, message: message, html: 1)
+
+    VCR.use_cassette("html") do
+      expect { m.push }.not_to raise_error
+    end
+  end
 end
