@@ -119,7 +119,7 @@ GEM
 
 PLATFORMS
   ruby
-  x86_64-darwin-24
+  x86_64-darwin
 
 DEPENDENCIES
   benchmark
