@@ -129,9 +129,9 @@ DEPENDENCIES
   irb
   logger
   pushover2!
-  rake (~> 13.0)
-  rspec (~> 3.0, >= 0)
-  standard (~> 1.3)
+  rake
+  rspec
+  standard
   vcr
   webmock
 
