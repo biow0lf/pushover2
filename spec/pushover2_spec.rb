@@ -35,4 +35,14 @@ RSpec.describe Pushover2 do
       expect { m.push }.not_to raise_error
     end
   end
+
+  it "is expected to send silent message" do
+    sound = "none"
+
+    m = Pushover2::Message.new(token: token, user: user, message: message, sound: sound)
+
+    VCR.use_cassette("sound") do
+      expect { m.push }.not_to raise_error
+    end
+  end
 end

@@ -38,7 +38,7 @@ module Pushover2
     # @param device [String, nil] Device name to send notification. Optional.
     # @param html [Integer, nil] If set to 1, send html formatted message. Optional.
     # @param priority [Integer, nil] One from: -2, -1, 0, 1, 2. Default: 0. Optional.
-    # @param sound [] Optional.
+    # @param sound [String, nil] Sound to play. Default: "pushover". Optional.
     # @param timestamp [] Optional.
     # @param title [String, nil] Title for notification. Optional.
     # @param ttl [Integer, nil] TTL for notification in seconds. Optional.
