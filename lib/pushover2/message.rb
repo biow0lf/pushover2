@@ -56,8 +56,7 @@ module Pushover2
       title: nil,
       ttl: nil,
       url: nil,
-      url_title: nil
-    )
+      url_title: nil)
       @client = Client.new
       @token = token
       @user = user
