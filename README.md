@@ -1,6 +1,6 @@
 # Pushover2
 
-Pushover.net API Client.
+Pushover.net Ruby API Client.
 
 ## Installation
 
@@ -18,15 +18,23 @@ gem install pushover2
 
 ## Usage
 
-TODO: Write usage instructions here
-
-### API
-
 ```ruby
 require "pushover2"
 
 # Send message
 message = Pushover2::Message.new(token: "app-token", user: "user-token", message: "...")
+message.push
+
+# Send to device
+message = Pushover2::Message.new(token: "app-token", user: "user-token", message: "...", device: "iphone")
+message.push
+
+# Send html message
+message = Pushover2::Message.new(token: "app-token", user: "user-token", message: "<b>Hello</b>", html: 1)
+message.push
+
+# Send silent message
+message = Pushover2::Message.new(token: "app-token", user: "user-token", message: "...", sound: "none")
 message.push
 ```
 
