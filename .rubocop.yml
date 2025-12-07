@@ -1,7 +1,17 @@
+plugins:
+  - rubocop-rake
+  - rubocop-rspec
+
 AllCops:
   NewCops: enable
 
 Style/StringLiterals:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false
 
 Gemspec/OrderedDependencies:
