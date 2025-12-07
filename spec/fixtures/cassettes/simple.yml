@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pushover.net/1/messages.json
+    body:
+      encoding: US-ASCII
+      string: token=app-token-123&user=user-token-123&message=Aloha%21
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Dec 2025 13:42:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      X-Frame-Options:
+      - DENY
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-Requested-With, X-Prototype-Version, Origin, Accept, Content-Type, X-CSRF-Token,
+        X-Pushover-App, Authorization
+      Access-Control-Max-Age:
+      - '1728000'
+      X-Limit-App-Limit:
+      - '10000'
+      X-Limit-App-Remaining:
+      - '9995'
+      X-Limit-App-Reset:
+      - '1767247200'
+      Etag:
+      - W/"8b9df7a3407faa45aa5ff90efc5a241b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ed552479-8135-452c-99bb-26416eec071a
+      X-Runtime:
+      - '0.069508'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Po-H:
+      - t
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 9aa471b7f8a70562-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":1,"request":"ed552479-8135-452c-99bb-26416eec071a"}'
+  recorded_at: Sun, 07 Dec 2025 13:42:04 GMT
+recorded_with: VCR 6.3.1

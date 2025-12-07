@@ -1,0 +1,119 @@
+# frozen_string_literal: true
+
+module Pushover2
+  class Message
+    MESSAGE_PATH = "/1/messages.json"
+
+    # Instance of Pushover2::Client
+    attr_reader :client
+
+    # Application Token (how is sending message)
+    attr_reader :token
+
+    # User Token (how is receiving message)
+    attr_reader :user
+
+    # String to send
+    attr_reader :message
+
+    attr_reader :attachment
+    attr_reader :attachment_base64
+    attr_reader :attachment_type
+    attr_reader :device
+    attr_reader :html
+    attr_reader :priority
+    attr_reader :sound
+    attr_reader :timestamp
+    attr_reader :title
+    attr_reader :ttl
+    attr_reader :url
+    attr_reader :url_title
+
+    # @param token [String] Application Token (how is sending message). Required.
+    # @param user [String] User Token (how is receiving message). Required.
+    # @param message [String] String to send. Required.
+    # @param attachment [] Optional.
+    # @param attachment_base64 [] Optional.
+    # @param attachment_type [] Optional.
+    # @param device [String, nil] Device name to send notification. Optional.
+    # @param html [Integer, nil] If set to 1, send html formatted message. Optional.
+    # @param priority [Integer, nil] One from: -2, -1, 0, 1, 2. Default: 0. Optional.
+    # @param sound [String, nil] Sound to play. Default: "pushover". Optional.
+    # @param timestamp [] Optional.
+    # @param title [String, nil] Title for notification. Optional.
+    # @param ttl [Integer, nil] TTL for notification in seconds. Optional.
+    # @param url [String, nil] URL for notification. Optional.
+    # @param url_title [String, nil] Title for notification URL. Optional.
+    def initialize(token:, user:, message:,
+      attachment: nil,
+      attachment_base64: nil,
+      attachment_type: nil,
+      device: nil,
+      html: nil,
+      priority: nil,
+      sound: nil,
+      timestamp: nil,
+      title: nil,
+      ttl: nil,
+      url: nil,
+      url_title: nil
+    )
+      @client = Client.new
+      @token = token
+      @user = user
+      @message = message
+      @attachment = attachment
+      @attachment_base64 = attachment_base64
+      @attachment_type = attachment_type
+      @device = device
+      @html = html
+      @priority = priority
+      @sound = sound
+      @timestamp = timestamp
+      @title = title
+      @ttl = ttl
+      @url = url
+      @url_title = url_title
+    end
+
+    def push
+      client.post(MESSAGE_PATH, body: body)
+    end
+
+    private
+
+    def body
+      payload = {
+        token: token,
+        user: user,
+        message: message,
+        attachment: attachment,
+        attachment_base64: attachment_base64,
+        attachment_type: attachment_type,
+        device: device,
+        html: html,
+        priority: priority,
+        sound: sound,
+        timestamp: timestamp,
+        title: title,
+        ttl: ttl,
+        url: url,
+        url_title: url_title
+      }.compact
+
+      if payload[:token].nil?
+        raise "Missing required :token field"
+      end
+
+      if payload[:user].nil?
+        raise "Missing required :user field"
+      end
+
+      if payload[:message].nil?
+        raise "Missing required :message field"
+      end
+
+      payload
+    end
+  end
+end

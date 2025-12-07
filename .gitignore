@@ -9,3 +9,9 @@
 
 # rspec failure tracking
 .rspec_status
+
+# RubyMine
+.idea/**/*
+
+# tokens in .envrc
+.envrc
