@@ -131,6 +131,7 @@ DEPENDENCIES
   pushover2!
   rake
   rspec
+  rubocop
   standard
   vcr
   webmock
