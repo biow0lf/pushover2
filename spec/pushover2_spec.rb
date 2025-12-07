@@ -3,10 +3,9 @@
 RSpec.describe Pushover2 do
   let(:token) { "app-token-123" }
   let(:user) { "user-token-123" }
+  let(:message) { "Aloha!" }
 
   it "is expected to send simple message" do
-    message = "Aloha!"
-
     m = Pushover2::Message.new(token: token, user: user, message: message)
 
     VCR.use_cassette("simple") do
@@ -14,6 +13,13 @@ RSpec.describe Pushover2 do
     end
   end
 
-  it "is expected to send message" do
+  it "is expected to send message to device" do
+    device = "iphone"
+
+    m = Pushover2::Message.new(token: token, user: user, message: message, device: device)
+
+    VCR.use_cassette("device") do
+      expect { m.push }.not_to raise_error
+    end
   end
 end
