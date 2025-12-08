@@ -8,7 +8,10 @@ gemspec
 gem "irb"
 gem "rake"
 gem "rspec"
-gem "standard"
+gem "standard", require: false
+gem "rubocop", require: false
+gem "rubocop-rake", require: false
+gem "rubocop-rspec", require: false
 
 gem "logger"
 gem "benchmark"
