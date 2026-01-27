@@ -139,7 +139,7 @@ DEPENDENCIES
   rubocop
   rubocop-rake
   rubocop-rspec
-  standard
+  standard (= 1.53.0)
   vcr
   webmock
 
