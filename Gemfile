@@ -8,7 +8,7 @@ gemspec
 gem "irb"
 gem "rake"
 gem "rspec"
-gem "standard", "1.55.0", require: false
+gem "standard", "1.56.0", require: false
 gem "rubocop", require: false
 gem "rubocop-rake", require: false
 gem "rubocop-rspec", require: false
