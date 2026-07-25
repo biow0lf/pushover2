@@ -14,8 +14,13 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.4.0"
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/biow0lf/pushover2"
+  spec.metadata = {
+    "rubygems_mfa_required" => "true",
+    "bug_tracker_uri" => "#{spec.homepage}/issues",
+    "documentation_uri" => "#{spec.homepage}/blob/v#{spec.version}/README.md",
+    "homepage_uri" => spec.homepage,
+    "source_code_uri" => spec.homepage
+  }
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
