@@ -14,6 +14,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   rspec:
     runs-on: ubuntu-24.04
@@ -30,6 +34,8 @@ jobs:
           egress-policy: audit
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - run: rm Gemfile.lock
 
@@ -39,8 +45,8 @@ jobs:
         uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8 # v1.327.0
         with:
           ruby-version: ${{ matrix.ruby }}
-          rubygems: "latest"
-          bundler: "latest"
+          rubygems: "4.0.22"
+          bundler: "4.0.22"
           bundler-cache: true
 
       - run: bundle exec rspec
