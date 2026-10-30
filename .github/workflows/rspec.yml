@@ -45,8 +45,8 @@ jobs:
         uses: ruby/setup-ruby@26e5b7d197ebf60545ee9667bcbace0be11ccaec # v1.334.0
         with:
           ruby-version: ${{ matrix.ruby }}
-          rubygems: "4.0.22"
-          bundler: "4.0.22"
+          rubygems: "4.0.23"
+          bundler: "4.0.23"
           bundler-cache: true
 
       - run: bundle exec rspec
